@@ -1,23 +1,25 @@
 *{
     margin:0px;
     padding:0px;
+    box-sizing: border-box;
 }
 body{
-    height:100vh;
-    display:flex;
+    display:block;
     flex-direction: column;
-    background-color: #D3D3D3;
+    background: url(./imgs/bgp3.jpg) no-repeat left top;
+    background-size: cover;
 }
 header{
     width:100%;
     height:13%;
-    background-color: darkseagreen;
+    background-color: transparent;
     display:flex;
     align-items: center;
     justify-content: center;
 }
 .head-wrapper{
     display:flex;
+    margin-top:2rem;
     align-items: center;
     justify-content: center;
 }
@@ -25,56 +27,76 @@ main{
     height:72%;
     width:100%;
     padding-top:80px;
-    background-color: lightcyan;
+    margin-bottom:3rem;
     text-align:center;
 }
 footer{
-    height:15%;
-    width:100%;
-    background-color: lightslategrey;
+    width:50rem;
+    margin: auto;
+    color:white;
+    text-align:center;
+    height:5rem;
+    background-color: transparent;
+}
+footer .foot{
+    margin-top:2em;
+}
+.foot p{
+    margin-top:0.5em;
+}
+footer a{
+    font-weight: bolder;
+    text-decoration: none;
+    color:#000033;
+    margin-left:1em;
 }
 .logo{
     flex:1;
-    margin-top:0.5em;
-    margin-left:10em;
+    margin-left:23em;
 }
 .logo a{
     display:inline-block;
-    width:200px;
-    height:80px;
+    width:5em;
+    height:2em;
     /* background: transparent; */
     /* background: url(./logo.png) no-repeat;*/
 }
 .logo img{
     border-radius:2em;
+    width:2.5em;
+    height:2.5em;
 }
 #search{
+    font-size:2.2em;
     flex:1;
-    width:700px;
+    width:23em;
     display:inline-block;
-    margin-right: 7em;
+    margin-right: 9em;
     position:relative;
-    right:0px;
 }
 input{
-    height:2.5em;
+    height:2.8em;
     background-color: #D3D3D3;
     border:none;
     border-radius: 0.3em;
 }
 input#keytext{
-    width:18em;
+    width:20em;
     padding-left:0.6em;
     margin-right:0.6em;
 }
 input.button{
     width:6em;
 }
+#divXXX {
+    width:50rem;
+    margin: auto;
+}
 #divXXX > div:nth-child(3){
     margin-left: 1em;
 }
 #divXXX > div:nth-child(4){
-    margin-left: 2em;
+    margin-left: 1em;
 }
 #divXXX > div{
     margin-top:1em;
@@ -82,32 +104,54 @@ input.button{
 
 kbd{
     font-size: 1.5em;
+    font-weight: bolder;
     position:relative;
     display: inline-block;
-    width:3em;
-    height:3em;
+    width:2.8em;
+    height:2.8em;
     border:1px solid #F3F3F3;
+    background-color: rgba(255,255,255,0.4);
     border-radius: 0.2em;
     border-bottom-left-radius: 0.5em;
     border-bottom-right-radius: 0.5em;
-    background-color: #D3D3D3;
-    margin-left: 1em;
+    margin-left: 1.2em;
     text-align: center;
-    line-height: 3em;
+    line-height: 2.2em;
     text-transform: uppercase;
+    text-shadow: 0 1px 0 rgba(255,255,255,.75);
 }
-
+kbd img{
+    border-radius: 0.5em;
+    border:none;
+    bottom:0.1em;
+    display:inline-block;
+    left: 0.1em;
+    position:absolute;
+    width:1em;
+    height:1em;
+    z-index:99;
+}
 kbd button{
     border-radius: 0.2em;
     border:none;
     bottom:0.2em;
     display:none;
+    position:absolute;
     width:1.3em;
     height:1.2em;
-    position:absolute;
+    background-color:#C0C0C0;
     z-index:99;
+}
+kbd:hover{
+    background-color: rgba(255,255,255,0.9);
 }
 kbd:hover > button{
     display: inline-block;
     z-index:99;
+}
+
+@media only screen and (max-width: 500px) {
+    .logo a{
+        margin-left: 20em;
+    }
 }
