@@ -20,7 +20,7 @@ if (hashInLocalStorage){
     hash = hashInLocalStorage
 }
 
-// 遍历keys，生成kbd标签
+// 遍历keys，生成kbd标签,
 var i = 0;
 console.log(keys.length);
 while(i < keys.length){
@@ -32,14 +32,16 @@ while(i < keys.length){
         buttonXE = document.createElement('button');
         //buttonXD = document.createElement('button');
         kbdX.textContent = keys[i][j];
-        // kbdX.id = keys[i][j];
-        // kbdX.onclick = function(keyb){
-        //     console.log(kbdX.id)
-        //     keyi = keyb['key']
-        //     website = hash[keyi];
-        //     // location.href = 'http://' +  website;
-        //     window.open('http://' +  website, '_blank');
-        // }
+        kbdX.id = keys[i][j];
+        kbdX.onclick = function(keyb){
+          console.log('我按下了一个键')
+          keyi = keyb.target.innerText[0].toLowerCase()
+          console.log(keyi)
+          website = hash[keyi];
+          console.log(website)
+          // location.href = 'http://' +  website;
+          window.open('http://' +  website, '_blank');
+        }
         buttonXE.textContent = 'E';
         //buttonXD.textContent = 'D';
         buttonXE.id = keys[i][j];
@@ -64,7 +66,18 @@ while(i < keys.length){
 document.onkeypress = function(keyb) {
     console.log('我按下了一个键')
     keyi = keyb['key']
+    console.log(keyi)
     website = hash[keyi];
     // location.href = 'http://' +  website;
     window.open('http://' +  website, '_blank');
 }
+// 点击按键打开对应网页
+// keyb.onclick = function(keyb) {
+//     console.log('我按下了一个键')
+//     keyi = keyb.target.innerText[0].toLowerCase()
+//     console.log(keyi)
+//     website = hash[keyi];
+//     console.log(website)
+//     // location.href = 'http://' +  website;
+//     window.open('http://' +  website, '_blank');
+// }
