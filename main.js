@@ -50,19 +50,19 @@ while(i < keys.length){
         buttonXE.id = keys[i][j];
         buttonXE.onclick = function(keyd){
             // keyd.target是用户点击的元素
-            keyd.stopPropagation();
             console.log(keyd.target.id)
             keyX = keyd.target.id
             new_website = prompt('更改按键对应的导航网址')
             hash[keyX] = new_website // hash变更
             localStorage.setItem('update_website', JSON.stringify(hash));
+            keyd.stopPropagation();
             location.reload();
             // console.log(hash)
         }
         divX.appendChild(kbdX);
         kbdX.appendChild(buttonXE);
         websi = hash[kbdX.id];
-        if(websi!==undefined){
+        if(websi!==undefined && websi!=='' && websi !== null){
             imgX = document.createElement('img');
             imgX.src = imgroute[websi];
             // console.log(websi,imgX.src)
